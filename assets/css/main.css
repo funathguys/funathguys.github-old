@@ -61,6 +61,11 @@
 	.container {
 		margin-left: auto;
 		margin-right: auto;
+		position: relative;
+    		padding-bottom: 56.25%;
+   		padding-top: 35px;
+    		height: 0;
+    		overflow: hidden;
 	}
 
 	.container.\31 25\25 {
@@ -213,9 +218,11 @@
 			width: 100% !important;
 		}
 		.intrinsic-container { 
-			position: relative; 
-			height: 0; 
-			overflow: hidden;
+			position: relative;
+    			padding-bottom: 56.25%;
+    			padding-top: 35px;
+    			height: 0;
+    			overflow: hidden;
  		} 
 /* 16x9 Aspect Ratio */ 
 		.intrinsic-container-16x9 {
