@@ -1,17 +1,24 @@
-<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>    
-  var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1bgDePhTZalAEZXvpXnknvE5gAJKzEFxhMOhroIJ9EZI/pubhtml?gid=1666728965&single=true';
+<!DOCTYPE html>
+<html>
+  <body>
 
-  function init() {
-    Tabletop.init( { key: publicSpreadsheetUrl,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+    <p id="data"></p>
 
-  function showInfo(data, tabletop) {
-    alert('Successfully processed!')
-    console.log(data);
-  }
-
-  window.addEventListener('DOMContentLoaded', init)
-</script>
+    <script type="text/javascript" src="../../src/tabletop.js"></script>
+    <script type="text/javascript">
+      var public_spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1bgDePhTZalAEZXvpXnknvE5gAJKzEFxhMOhroIJ9EZI/pubhtml?gid=1666728965&single=true';
+      function init() {
+        Tabletop.init( { key: public_spreadsheet_url,
+                         callback: showInfo,
+                         simpleSheet: true } );
+      }
+      window.addEventListener('DOMContentLoaded', init)
+      function showInfo(data) {
+        // data comes through as a simple array since simpleSheet is turned on
+        document.getElementById("data").innerHTML = JSON.stringify(data);
+        console.log(data);
+      }
+      document.write("The published spreadsheet is located at <a target='_new' href='" + public_spreadsheet_url + "'>" + public_spreadsheet_url + "</a>");        
+    </script>
+  </body>
+</html>
