@@ -1,0 +1,4 @@
+$.getJSON("https://spreadsheets.google.com/feeds/list/1bgDePhTZalAEZXvpXnknvE5gAJKzEFxhMOhroIJ9EZI/od6/public/values?alt=json-in-script&callback=", function(data) {
+  //first row "title" column
+  console.log(data.feed.entry[0]['gsx$title']['$t']);
+});
